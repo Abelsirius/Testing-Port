@@ -15,44 +15,6 @@ window.addEventListener("keyup",(e)=>{
 // }
 
 
-let saludo = "Hola ";
-
-let name =document.querySelector(".namE");
-
-let btnSubmit = document.querySelector('.btn-submit');
-
-
-btnSubmit.addEventListener("click",function(){
-      if (name.value.length) {
-         alert("al menos debe tener el nombre 16 caracteres")
-      }else{
-            alert(saludo.concat(name.value))
-      }
-})
-
-let abel = document.querySelector(".Abel");
-let array = ["Front-end","Abel"]
-let contador = 0;
-
-let interval = 6000;
-
-
-
-setInterval(function(){
-	  slide();
-},interval);
-
-
- function slide(){
-     
-     abel.textContent = array[contador];
-     contador++;
-
-     if (contador === array.length) {
-     	contador = 0;
-     }
- }
-
 
  let btnA = document.querySelector(".move1");
  let btnB = document.querySelector(".move2");
@@ -185,3 +147,41 @@ moon.addEventListener("click",function(){
       window.open("file:///C:/Users/PC-011/OneDrive%20-%20CIBERTEC/Desktop/CSS,%20JS%20Y%20HTML/Pagina%20web%203/index.html");
   }) 
          
+
+  /* ----------------------- Navigator nav ----------- */
+
+
+  function closeNavUl (){
+     let nav = document.querySelector('.nav__data');
+     nav.classList.remove('active')
+     const iconBugerToggle = document.getElementById('burger_icon');
+     iconBugerToggle.className = 'ri-function-line';
+  }
+
+
+  const arrLinks = document.querySelectorAll('.link_nav a');
+
+
+  arrLinks.forEach(function(link){
+        
+     link.addEventListener('click',closeNavUl)
+
+  })
+
+
+
+  /* ------------------- toggle burger ---------------- */ 
+
+
+  const iconBugerToggle = document.getElementById('burger_icon');
+
+  iconBugerToggle.addEventListener('click',function(){
+      
+      if(iconBugerToggle.classList.contains('ri-function-line')){
+        iconBugerToggle.className = 'ri-close-line'
+      }
+      else{
+        iconBugerToggle.className = 'ri-function-line'
+      }
+
+  })

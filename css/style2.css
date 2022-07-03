@@ -777,6 +777,10 @@ b{
 	   padding: 0;
 	}
 
+	.service-data{
+		width: fit-content;
+	}
+
    .Presentacion{
 	flex-direction: column;
    }
@@ -790,6 +794,10 @@ b{
    .profile-description, .profile-description-me,.about-me-subtitle p{
 	text-align: center;
 	align-items: center;
+	width: fit-content;
+   }
+   .profile-description .profile-titulo{
+	font-size: 25px;
    }
    .red-social{
 	 flex-direction: initial;
@@ -1841,5 +1849,28 @@ input[type="submit"]:hover{
 	}
 	.swiper-proyecto-icon{
 		font-size: 2.5rem;
+	}
+	.service-data{
+		width: fit-content;
+	}
+	.footer-data{
+		width: fit-content;
+	}
+	.About-me-description{
+		width: fit-content;
+	}
+}
+
+
+@media screen and (max-width:300px) {
+	 
+	.service-data h4{
+		margin: 0;
+	}
+	.imgBx-about-me img{
+		width: 80%;
+	}
+	.titulo-education{
+		margin: 0;
 	}
 }

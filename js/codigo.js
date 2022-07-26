@@ -185,3 +185,27 @@ moon.addEventListener("click",function(){
       }
 
   })
+
+  /* ------------ dowmload ----------- */ 
+//   function download(filename, text) {
+//     var element = document.createElement('a');
+//     element.setAttribute('href', 'data:text/doc;charset=utf-8,' + encodeURIComponent(text));
+//     element.setAttribute('download', filename);
+  
+//     element.style.display = 'none';
+//     document.body.appendChild(element);
+  
+//     element.click();
+  
+//     document.body.removeChild(element);
+//   }
+  
+//   // Start file download.
+  
+
+//   document.getElementById('descargar-cv').addEventListener("click", function(){
+//     // Generate download of hello.txt file with some content
+//     var filename = 'abelCv.doc'
+    
+//     download(filename, text);
+// }, false);

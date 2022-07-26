@@ -172,21 +172,21 @@ ul li a{
    text-decoration: none;
    color: var(--color-parrafo);
    font-family: var(--font-second);
-   font-size: .9rem;
+   font-size: 1.1rem;
    font-weight: 900;
    padding-bottom: 5px;
 }
 ul li:nth-child(1) a:nth-child(1){
  color: var(--first-color);
 }
-ul li:nth-child(8) i{
-	display: none;
+.nav__data{
+	margin: 0 10px;
 }
 
 .ri-moon-fill{
 	color:var(--color-white);
 	cursor: pointer;
-	font-size: 18px;
+	font-size: 25px;
 	 display: flex;
  align-items: center;
  justify-content: flex-start;
@@ -198,7 +198,7 @@ ul li:nth-child(8) i{
 .ri-sun-fill{
 	color:var(--color-white);
 		cursor: pointer;
-	font-size: 18px;
+	font-size: 25px;
 	transition: .7s;
 }
 .ri-moon-fill:hover{
@@ -274,8 +274,8 @@ ul li:nth-child(8) i{
 .verMas{
     position: relative;
 	display: flex;
-	height: 50px;
-	width: 130px;
+	height: 60px;
+	width: 170px;
 	border-radius: 5px;
 	background: var(--first-color);
     align-items: center;
@@ -287,7 +287,7 @@ ul li:nth-child(8) i{
 
 
 .verMas a{
-	font-size: 15px;
+	font-size: 19px;
 	font-weight: bolder;
 	color: #fff;
 	text-decoration: none;
@@ -298,8 +298,8 @@ ul li:nth-child(8) i{
  .ri-arrow-right-line{
 
  	padding: 0px 5px;
- 	font-size: 18px;
- 	color: var(--first-color);
+ 	font-size: 25px;
+ 	color: #fff;
 
 }
 
@@ -442,7 +442,7 @@ b{
 
     font-weight: bolder;
     color: #999;
-    font-size: 16px;
+    font-size: 19px;
     font-family: var(--font-title);
 }
 
@@ -455,7 +455,7 @@ b{
 	text-align: center;
 }
 .first-caja- span{
-	font-size: 13px;
+	font-size: 15px;
 	font-weight: bolder;
 	color: #999;
 }
@@ -476,7 +476,8 @@ b{
 	  height: 40px;
       padding: 10px;
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
+	  gap: 5px;
       align-items: center;
       cursor: pointer;
       transition:  0.7s;
@@ -499,7 +500,6 @@ b{
 	.container-Skill{
 	  background: var(--bg-color);
        width: 100%;
-       height: 600px;
        position: relative;
        top: 0;
        left: 0;
@@ -836,6 +836,7 @@ position: relative;
     z-index: 100;
 	}
 		.nav__data.active{
+			margin: 0;
 			color: var(--bg-color);
 		    display: flex;
     transform: translateX(0px);
@@ -1897,4 +1898,13 @@ input[type="submit"]:hover{
 	.titulo-education{
 		margin: 0;
 	}
+}
+
+.descargar-cv a{
+	color: #fff;
+    text-decoration: none;
+}
+
+.descargar-cv i{
+	font-size: 20px;
 }

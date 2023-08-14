@@ -214,7 +214,7 @@ const sendMensaje = (e) =>{
    e.preventDefault()
    let name = document.querySelector(".namE");
    let text = document.querySelector(".mensaje");
-   let url = "https://api.whatsapp.com/send?phone=51926488676&text=Nombre: %0A" + name.value + "%0a%0AMensaje: %0A" + text.value + "%0A";
+   let url = "https://api.whatsapp.com/send?phone=51926488675&text=Nombre: %0A" + name.value + "%0a%0AMensaje: %0A" + text.value + "%0A";
    if(name.value.length > 0 && text.value.length > 0){
     window.open(url)
     name.value = '';

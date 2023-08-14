@@ -209,12 +209,12 @@ moon.addEventListener("click",function(){
     
 //     download(filename, text);
 // }, false);// Api WhatsApp
-let formWhatsApp = document.querySelector(".form");
+let formWhatsApp = document.querySelector(".form_api");
 const sendMensaje = (e) =>{
    e.preventDefault()
 	consolé.log("hola mundo");
    let name = document.querySelector(".namE");
-   let text = document.querySelector(".mensaje");
+   let text = document.querySelector(".mensaje_api");
    let url = "https://api.whatsapp.com/send?phone=51926488675&text=Nombre: %0A" + name.value + "%0a%0AMensaje: %0A" + text.value + "%0A";
    if(name.value.length > 0 && text.value.length > 0){
     window.open(url)

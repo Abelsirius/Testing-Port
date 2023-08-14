@@ -209,7 +209,7 @@ moon.addEventListener("click",function(){
     
 //     download(filename, text);
 // }, false);// Api WhatsApp
-let btnSubmit = document.querySelector('btn-submit');
+let btnSubmit = document.querySelector('.btn-submit');
 let formWhatsApp = document.querySelector('.form_api');
 const sendMensaje = (e) =>{
    e.preventDefault()

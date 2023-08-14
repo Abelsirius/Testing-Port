@@ -140,11 +140,11 @@ moon.addEventListener("click",function(){
 
 
   pageTwo.addEventListener("click",()=>{
-      window.open("https://abelsirius.github.io/PaginaWeb/");
+      window.open("https://abelsirius.github.io/DeyserShop/");
   })
 
   pageTree.addEventListener("click",()=>{
-      window.open("file:///C:/Users/PC-011/OneDrive%20-%20CIBERTEC/Desktop/CSS,%20JS%20Y%20HTML/Pagina%20web%203/index.html");
+      window.open("https://abelsirius.github.io/Constructora/#trabajadores");
   }) 
          
 
@@ -208,19 +208,22 @@ moon.addEventListener("click",function(){
 //     var filename = 'abelCv.doc'
     
 //     download(filename, text);
-// }, false);// Api WhatsApp
-let btnSubmit = document.querySelector('.btn-submit');
-let formWhatsApp = document.querySelector('.form_api');
+// }, false);
+// Api WhatsApp
+let formWhatsApp = document.querySelector("form");
+console.log(formWhatsApp)
 const sendMensaje = (e) =>{
+  console.log(e)
    e.preventDefault()
-	consolé.log("hola mundo");
-   let name = document.querySelector('.namE');
-   let text = document.querySelector('.mensaje_api');
-   let url = "https://api.whatsapp.com/send?phone=51926488675&text=Nombre: %0A" + name.value + "%0a%0AMensaje: %0A" + text.value + "%0A";
+   let name = document.querySelector(".namE");
+   let text = document.querySelector(".mensaje");
+   let correo = document.querySelector(".email");
+   let url = "https://api.whatsapp.com/send?phone=51926488675&text=Nombre: %0A" + name.value + "%0a%0AMensaje: %0A" + text.value + "%0A" + "%0a%0ACorreo: %0A" + correo.value + "%0A";
    if(name.value.length > 0 && text.value.length > 0){
     window.open(url)
     name.value = '';
     text.value = '';
+    formWhatsApp.classList.remove('active');
    }else{
        if(formWhatsApp.lastElementChild.classList.contains('error-whatsapp') === false){
         let error = document.createElement('H3');
@@ -233,10 +236,5 @@ const sendMensaje = (e) =>{
    }
 }
 
-formWhatsApp.addEventListener('submit',sendMensaje);
-alert("hola");
+formWhatsApp.addEventListener('submit',sendMensaje)
 
-
-const sendMe = (e) ={alert(e)};
-
-btnSubmit.addEventListener('click',sendMe);

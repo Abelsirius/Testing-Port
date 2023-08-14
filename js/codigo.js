@@ -209,3 +209,28 @@ moon.addEventListener("click",function(){
     
 //     download(filename, text);
 // }, false);
+// Api WhatsApp
+const sendMensaje = (e) =>{
+   e.preventDefault()
+   let name = document.querySelector('.nombre-input-whatsapp');
+   let text = document.querySelector('.mensaje-input-whatsapp');
+   let url = "https://api.whatsapp.com/send?phone=51922260216&text=Nombre: %0A" + name.value + "%0a%0AMensaje: %0A" + text.value + "%0A";
+   if(name.value.length > 0 && text.value.length > 0){
+    window.open(url)
+    name.value = '';
+    text.value = '';
+    formWhatsApp.classList.remove('active');
+   }else{
+       if(formWhatsApp.lastElementChild.classList.contains('error-whatsapp') === false){
+        let error = document.createElement('H3');
+        error.classList.add('error-whatsapp')
+        error.textContent = "Por favor rellene los campos";
+        error.style.color = '#fa4e4e';
+        error.style.padding = '0 0 8px 0'
+        formWhatsApp.appendChild(error)
+       }
+   }
+}
+
+formWhatsApp.addEventListener('submit',sendMensaje)
+

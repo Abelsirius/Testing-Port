@@ -212,6 +212,7 @@ moon.addEventListener("click",function(){
 let formWhatsApp = document.querySelector(".form");
 const sendMensaje = (e) =>{
    e.preventDefault()
+	consolé.log("hola mundo");
    let name = document.querySelector(".namE");
    let text = document.querySelector(".mensaje");
    let url = "https://api.whatsapp.com/send?phone=51926488675&text=Nombre: %0A" + name.value + "%0a%0AMensaje: %0A" + text.value + "%0A";

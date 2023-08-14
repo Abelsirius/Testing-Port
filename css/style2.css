@@ -4,7 +4,7 @@
 :root{
     --hue:260;
 	--first-color:hsl(var(--hue),90%,61%);
-	--bg-color:hsl(var(--hue),100%,97%);
+	--bg-color:hsl(var(--hue),100%,98%);
 	--font-title:'Lato', sans-serif;
 	--font-second:'Lato', sans-serif;;
 	--second-color: hsl(var(--hue),79%,81%);
@@ -26,7 +26,10 @@ body{
     transition: .7s;	
 }
 
-
+.img_logo_title{
+	width: 35px;
+	height: 35px;
+}
 	.dark-theme{
 		--bg-color:hsl(var(--hue),35%,15%);
 	    --bg-tarjets:hsl(var(--hue),87%,12%);
@@ -138,15 +141,18 @@ header{
     display: flex;
     justify-content: center;
 	align-items: center;
-	width: 20%;
+	width: auto;
 	padding: 0px 10px;
+	margin: 0px 10px;
 	letter-spacing: 1px;
-	transform: translateY(-10px);
 
 }
 
 .nav .Logo h1{
+	position: relative;
+	top: 0;
 	font-size: 1.5rem;
+	padding: 0 10px;
 	font-weight: 700; 
 	color: var(--color-white);
 	width: 100%;
@@ -172,15 +178,16 @@ ul li a{
    text-decoration: none;
    color: var(--color-parrafo);
    font-family: var(--font-second);
-   font-size: 1.1rem;
+   font-size: 1rem;
    font-weight: 900;
    padding-bottom: 5px;
 }
-ul li:nth-child(1) a:nth-child(1){
- color: var(--first-color);
-}
+
 .nav__data{
 	margin: 0 10px;
+}
+.link_nav.active a{
+	color: var(--color-white);
 }
 
 .ri-moon-fill{
@@ -191,9 +198,7 @@ ul li:nth-child(1) a:nth-child(1){
  align-items: center;
  justify-content: flex-start;
 	transition: .7s;
-	position: absolute;
-	left: 0;
-	top: 8px;
+	right: 0;
 }
 .ri-sun-fill{
 	color:var(--color-white);
@@ -354,6 +359,7 @@ b{
 }
 
 .ri-mouse-line a{
+	font-family: 'lato';
 	padding: 15px 0px;
 	font-size: 14px;
 	text-decoration: none;
@@ -603,6 +609,10 @@ b{
     transition: .7s;
 }
 
+.men_form{
+	color: var(--color-white);
+}
+
 .text-skill h3{
 	font-size: 0rem;
 	opacity: 0;
@@ -768,15 +778,30 @@ b{
 	color: var(--first-color);
 	cursor: pointer;
 }
+ /* ------------ Mode Oscuro  ----------- */ 
 
+ .mode_oscuro{
+	display: none;
+  }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 900px){
 	.data-1{
 		flex-direction: column;
 		gap: 20px;
 	   padding: 0;
 	}
+  /* ------------ Mode Oscuro  ----------- */ 
 
+  .mode_oscuro{
+	display: block;
+	color: var(--color-white);
+  }
+  .link_nav_icon{
+	width: 200px;
+	display: flex;
+	align-items: center;
+	gap: 30px;
+  }
 	.service-data{
 		width: fit-content;
 	}
@@ -874,6 +899,7 @@ position: relative;
 
 				ul li:nth-child(8) i{
 	display: block;
+	font-size: 35px;
 }
 
 		li:nth-child(7){
@@ -884,7 +910,7 @@ position: relative;
 }
 
 li:nth-child(7) a:nth-child(1){
-	color: #111;
+	color: var(--color-white);
 }
 	.menu-bar{
     display: block;
@@ -1580,7 +1606,8 @@ form{
 label{
 	display: flex;
 	align-items: center;
-	padding: 10px;
+	justify-content: center;
+	padding: 10px ;
 }
 form label span{
 	font-size: 20px;
@@ -1601,6 +1628,8 @@ label img{
 	justify-content: center;
 	align-items: flex-start;
 }
+
+
 
 .contact-data{
 	margin: 10px 0px;
@@ -1788,11 +1817,8 @@ input[type="submit"]:hover{
 		width: 100%;
 		height: 100%;
 		display: flex;
-		justify-content: center;
-		align-items: center;
 		flex-direction: column;
 		gap: 15px;
-		padding: 0;
 		margin: 0;
 	}
 

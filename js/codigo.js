@@ -208,4 +208,28 @@ moon.addEventListener("click",function(){
 //     var filename = 'abelCv.doc'
     
 //     download(filename, text);
-// }, false);
+// }, false);// Api WhatsApp
+let formWhatsApp = document.querySelector("form");
+const sendMensaje = (e) =>{
+   e.preventDefault()
+   let name = document.querySelector(".name");
+   let text = document.querySelector(".mensaje");
+   let url = "https://api.whatsapp.com/send?phone=51926488676&text=Nombre: %0A" + name.value + "%0a%0AMensaje: %0A" + text.value + "%0A";
+   if(name.value.length > 0 && text.value.length > 0){
+    window.open(url)
+    name.value = '';
+    text.value = '';
+    formWhatsApp.classList.remove('active');
+   }else{
+       if(formWhatsApp.lastElementChild.classList.contains('error-whatsapp') === false){
+        let error = document.createElement('H3');
+        error.classList.add('error-whatsapp')
+        error.textContent = "Por favor rellene los campos";
+        error.style.color = '#fa4e4e';
+        error.style.padding = '0 0 8px 0'
+        formWhatsApp.appendChild(error)
+       }
+   }
+}
+
+formWhatsApp.addEventListener('submit',sendMensaje)

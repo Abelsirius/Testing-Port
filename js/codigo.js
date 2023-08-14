@@ -209,7 +209,7 @@ moon.addEventListener("click",function(){
     
 //     download(filename, text);
 // }, false);// Api WhatsApp
-let formWhatsApp = document.querySelector(".btn-submit");
+let formWhatsApp = document.querySelector(".form_api");
 const sendMensaje = (e) =>{
    e.preventDefault()
 	consolé.log("hola mundo");
@@ -233,5 +233,5 @@ const sendMensaje = (e) =>{
    }
 }
 
-formWhatsApp.addEventListener('click',sendMensaje)
-alert(formWhatsApp);
+formWhatsApp.addEventListener('submit',sendMensaje);
+alert("hola");

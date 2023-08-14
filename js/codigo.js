@@ -209,10 +209,10 @@ moon.addEventListener("click",function(){
     
 //     download(filename, text);
 // }, false);// Api WhatsApp
-let formWhatsApp = document.querySelector("form");
+let formWhatsApp = document.querySelector(".form");
 const sendMensaje = (e) =>{
    e.preventDefault()
-   let name = document.querySelector(".name");
+   let name = document.querySelector(".namE");
    let text = document.querySelector(".mensaje");
    let url = "https://api.whatsapp.com/send?phone=51926488676&text=Nombre: %0A" + name.value + "%0a%0AMensaje: %0A" + text.value + "%0A";
    if(name.value.length > 0 && text.value.length > 0){

@@ -237,7 +237,6 @@ ul li a{
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	transform: scaleX(-1);
 }
 
 .profile-description{
@@ -252,6 +251,46 @@ ul li a{
     text-align: left;
 	padding: 0 10px;
 }
+
+.link_nav .active{
+	border-bottom: 3px solid var(--first-color);
+}
+
+
+
+
+   
+   /* Styles for the tilt block */
+   .profile_img {
+	 display: block;
+	 height: 200px;
+	 width: 300px;
+	 margin: 0 auto;
+	 transition: filter 0.3s, transform 0.1s;
+	 
+	 /*
+	   * Adding image to the background
+	   * No relation to the hover effect.
+	   */
+	 background-size: 100%;
+   }
+   
+   .profile_img:hover {
+	 filter: saturate(3);
+	 cursor: pointer;
+   }
+   
+
+
+
+
+
+
+
+
+
+
+
 
 
 .profile-description .profile-titulo{
@@ -903,10 +942,6 @@ position: relative;
 }
 
 		li:nth-child(7){
-	border-radius: 5px;
-	padding: 8px;
-	background-color: var(--first-color);
-	transition: .7s;
 }
 
 li:nth-child(7) a:nth-child(1){

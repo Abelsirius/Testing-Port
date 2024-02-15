@@ -1,321 +1,160 @@
 
-window.addEventListener("keyup",(e)=>{
-     if (e.keyCode == 113) {
-       document.querySelector("body").classList.toggle("dark-theme");
-     }
-})
 
-// let numero = parseInt(prompt("Dime un numero"));
-
-// let numeroSumar = 0;
-
-// while(numeroSumar < numero){
-//     numeroSumar++;
-//     console.log(numeroSumar)
-// }
-
-
-
- let btnA = document.querySelector(".move1");
- let btnB = document.querySelector(".move2");
-
- let closeModal = document.querySelector(".ri-close-line");
- let closeModal2 = document.querySelector(".close2");
-   let modalDw = document.querySelector(".modal-services");
-   	let modalDw2 = document.querySelector(".modal-services2");
-
-
-
-closeModal.addEventListener("click",function(){
-	cerrarModal(modalDw);
-})
-closeModal2.addEventListener("click",function(){
-	cerrarModal(modalDw2)
-})
-
-btnB.addEventListener("click",function(e){
-    modalDw.classList.add("active")
-    e.preventDefault()
-})
-
-btnA.addEventListener("click",function(e){
-	modalDw2.classList.add("active")
-	e.preventDefault();
-
-})
-
-function cerrarModal(modal){
-      	modal.classList.remove("active")
-}
-
-let moon = document.querySelector(".ri-moon-fill");
-
-moon.addEventListener("click",function(){
-
-	moon.classList.toggle("ri-sun-fill");
-
-	let body = document.querySelector("body");
-
-	body.classList.toggle("dark-theme")
-    
-})
-
-// let contentSlide = document.querySelector(".content-slide");
-
-// let viewSlide = document.querySelectorAll(".view-slide");
-
-// let contando = 1;
-
-// let contar = 1;
-// let intervalo = 2500;
-
-
-
-// let arrowLeft = document.querySelector(".ri-arrow-left-s-line");
-
-// let arrowRight = document.querySelector(".ri-arrow-right-s-line");
-
-// // setInterval(function(){
-// //     slider()
-// // },intervalo)
- 
-
-// arrowRight.addEventListener("click",sliderRight)
-
-// function sliderRight(e){
-
+      const activeHeader = () =>{
         
-//         let width = viewSlide[0].clientWidth;
+         let header = document.querySelector('header');
+         let pageY  = window.scrollY;
 
-//         contentSlide.style.transform = "translate("+ (-width * contando) + "px";
-//         contentSlide.style.transition = "transform 1s";
-//         contando++;
-//         if (contando === viewSlide.length) {
-//             contando = 2;
-//         }
-// }
+         if( pageY >  0){
 
-// arrowLeft.addEventListener("click",sliderleft)
-    
+          header.classList.add('active');
+            
+         }
+         else{
+          header.classList.remove('active');
+             
+         }
+
+      }
+
+      window.addEventListener('scroll',activeHeader)
+      
+      
+      
+      let btnMenu = document.querySelector('.nav_menu_icon');
+      let iconMenu = document.querySelector('.ri-menu-line')
+
+      
+      const toggleMenu = () =>{
+         
+        let navMenu = document.querySelector('.nav_menu');
+
+         navMenu.classList.toggle('active');
+         
+         if(navMenu.classList.contains('active')){
+          iconMenu.className ="ri-close-line";
+         }else{
+          iconMenu.className ="ri-menu-line";
+
+         }
+      }
+
+      btnMenu.addEventListener('click',toggleMenu)
+      
+      
+      
+      
+      
+      
+      var swiper = new Swiper(".container_swiper",{
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        loop:true,
+        spaceBetween:40,
+        coverflowEffect: {
+          rotate: 0,
+        },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+      });
+
   
-//   function sliderleft(){
-//         let width2 = viewSlide[0].clientWidth;
 
-//         contentSlide.style.transform = "translate("+ (-width2 * contando) + "px";
-//         contentSlide.style.transition = "transform 1s";
-//         contando--;
-
-//         if (contando === -1) {
-//             contando = 0;
-//             console.log(contando)
-//         }
-//   }
-
-
-  let  swiper = new Swiper('.swiper-container', {
+          var swiper = new Swiper('.contenedor_view_restaurant', {
       cssMode: true,
-      loop:true,
-
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
       pagination: {
-        el: '.swiper-pagination',
-        clickable:true,
+        el: '.swiper-pagination'
       },
-         mousewheel: true,
+      mousewheel: true,
+      keyboard: true,
     });
-       
-
-  let pageOne = document.getElementById('pageOne');
-  let pageTwo = document.getElementById('pageTwo');
-  let pageTree = document.getElementById('pageTree');
 
 
 
-  pageOne.addEventListener("click",()=>{
-      window.open("https://abelsirius.github.io/PeruTravel/");
-  })
+
+    /* ----------- Cambiar Page Dark ----------- */
 
 
-  pageTwo.addEventListener("click",()=>{
-      window.open("https://abelsirius.github.io/DeyserShop/");
-  })
+    let iconoTheme = document.querySelector('.ri-moon-line');
 
-  pageTree.addEventListener("click",()=>{
-      window.open("https://abelsirius.github.io/Constructora/#trabajadores");
-  }) 
-         
-
-  /* ----------------------- Navigator nav ----------- */
-
-
-  function closeNavUl (){
-     let nav = document.querySelector('.nav__data');
-     nav.classList.remove('active')
-     const iconBugerToggle = document.getElementById('burger_icon');
-     iconBugerToggle.className = 'ri-function-line';
-  }
-
-
-  const arrLinks = document.querySelectorAll('.link_nav a');
-
-
-  arrLinks.forEach(function(link){
-        
-     link.addEventListener('click',closeNavUl)
-
-  })
-
-
-
-  /* ------------------- toggle burger ---------------- */ 
-
-
-  const iconBugerToggle = document.getElementById('burger_icon');
-
-  iconBugerToggle.addEventListener('click',function(){
-      
-      if(iconBugerToggle.classList.contains('ri-function-line')){
-        iconBugerToggle.className = 'ri-close-line'
-      }
-      else{
-        iconBugerToggle.className = 'ri-function-line'
-      }
-
-  })
-
-  /* ------------ dowmload ----------- */ 
-//   function download(filename, text) {
-//     var element = document.createElement('a');
-//     element.setAttribute('href', 'data:text/doc;charset=utf-8,' + encodeURIComponent(text));
-//     element.setAttribute('download', filename);
-  
-//     element.style.display = 'none';
-//     document.body.appendChild(element);
-  
-//     element.click();
-  
-//     document.body.removeChild(element);
-//   }
-  
-//   // Start file download.
-  
-
-//   document.getElementById('descargar-cv').addEventListener("click", function(){
-//     // Generate download of hello.txt file with some content
-//     var filename = 'abelCv.doc'
     
-//     download(filename, text);
-// }, false);
-// Api WhatsApp
-let formWhatsApp = document.querySelector("form");
-console.log(formWhatsApp)
-const sendMensaje = (e) =>{
-  console.log(e)
-   e.preventDefault()
-   let name = document.querySelector(".namE");
-   let text = document.querySelector(".mensaje");
-   let correo = document.querySelector(".email");
-   let url = "https://api.whatsapp.com/send?phone=51926488675&text=Nombre: %0A" + name.value + "%0a%0AMensaje: %0A" + text.value + "%0A" + "%0a%0ACorreo: %0A" + correo.value + "%0A";
-   if(name.value.length > 0 && text.value.length > 0){
-    window.open(url)
-    name.value = '';
-    text.value = '';
-    formWhatsApp.classList.remove('active');
-   }else{
-       if(formWhatsApp.lastElementChild.classList.contains('error-whatsapp') === false){
-        let error = document.createElement('H3');
-        error.classList.add('error-whatsapp')
-        error.textContent = "Por favor rellene los campos";
-        error.style.color = '#fa4e4e';
-        error.style.padding = '0 0 8px 0'
-        formWhatsApp.appendChild(error)
-       }
-   }
-}
+    const changeTheme = () =>{
 
-formWhatsApp.addEventListener('submit',sendMensaje)
+      if(iconoTheme.classList.contains('ri-moon-line')){
+        iconoTheme.className = 'ri-sun-line';
+        document.querySelector('body').classList.add('dark-theme')
+      }else{
+        iconoTheme.className = 'ri-moon-line';
+        document.querySelector('body').classList.remove('dark-theme')
+      }
+    }
 
 
-/* ------- BAR NAVIGATOR ----------*/
-
-
-let nav_bar_links = document.querySelectorAll(".link_nav");
-
-
-const currentNavBar = (e) =>{
-
-if(!e.target.classList.contains("active")){
- console.log("no tiene")
-   nav_bar_links.forEach((item)=> item.firstChild.classList.remove("active"))
-   e.target.classList.add("active");
-}
-
-}
-
-
-nav_bar_links.forEach((item)=> item.addEventListener("click",currentNavBar))
+    iconoTheme.addEventListener('click',changeTheme)
 
 
 
 
+    /* ---------------- Scroll Ravel ------------------*/
 
-let el = document.querySelector('.profile_img')
 
-/* Get the height and width of the element */
-const height = el.clientHeight
-const width = el.clientWidth
-
-/*
-  * Add a listener for mousemove event
-  * Which will trigger function 'handleMove'
-  * On mousemove
-  */
-el.addEventListener('mousemove', handleMove)
-
-/* Define function a */
-function handleMove(e) {
-  /*
-    * Get position of mouse cursor
-    * With respect to the element
-    * On mouseover
-    */
-  /* Store the x position */
-  const xVal = e.layerX
-  /* Store the y position */
-  const yVal = e.layerY
+    const sr = ScrollReveal({
+      distance:"50px",
+      duration:2500,
+      reset:true
+  })
   
-  /*
-    * Calculate rotation valuee along the Y-axis
-    * Here the multiplier 20 is to
-    * Control the rotation
-    * You can change the value and see the results
-    */
-  const yRotation = 25 * ((xVal - width / 2) / width)
+  sr.reveal(".inicio_data_subtitulo, .titulo_inicio , .contenedor_btn, .about_data, .img_platillos, .contenedor_titulo , .container_swiper, .contenedor_subtitulo , .card_service, .contenedor_view_restaurant,.item-social-media,.inputs-form,.fooster-content-item,.content-terminos-privacidad",{
+      origin: "top",
+      interval: 100,
+  })
   
-  /* Calculate the rotation along the X-axis */
-  const xRotation = 25 * ((yVal - height / 2) / height)
   
-  /* Generate string for CSS transform property */
-  const string = 'perspective(500px) scale(1.1) rotateX(' + xRotation + 'deg) rotateY(' + yRotation + 'deg)'
+  sr.reveal(".contenedor_redes_sociales, .subscribe__description",{
+      origin:"left",
   
-  /* Apply the calculated transformation */
-  el.style.transform = string
-}
+  })
+  sr.reveal(".about__img-overlay, .video__content, .subscribe__form",{
+      origin:"right",
+      interval:100,
+  
+  })
 
-/* Add listener for mouseout event, remove the rotation */
-el.addEventListener('mouseout', function() {
-  el.style.transform = 'perspective(500px) scale(1) rotateX(0) rotateY(0)'
-})
 
-/* Add listener for mousedown event, to simulate click */
-el.addEventListener('mousedown', function() {
-  el.style.transform = 'perspective(500px) scale(0.9) rotateX(0) rotateY(0)'
-})
+  /* ------------ CloseNav ------------- */ 
 
-/* Add listener for mouseup, simulate release of mouse click */
-el.addEventListener('mouseup', function() {
-  el.style.transform = 'perspective(500px) scale(1.1) rotateX(0) rotateY(0)'
-})
+
+  let arrLinks = document.querySelectorAll('.nav_menu li');
+  let arrLinksa = document.querySelectorAll('.nav_menu li a');
+
+
+  
+  const closeNav = (e) =>{
+   
+     let nav_menu = document.querySelector('.nav_menu');
+     nav_menu.classList.remove('active');
+   
+
+     let iconMenu = document.querySelector('.ri-close-line');
+     iconMenu.className = 'ri-menu-line';
+
+     arrLinksa.forEach(link => link.classList.contains('active') ? link.classList.remove('active') : console.log('as'))
+
+     e.target.classList.add('active')
+  }  
+
+
+  arrLinks.forEach(link => link.addEventListener('click',(e)=>closeNav(e)))
+
+
+
+
+  

@@ -166,7 +166,7 @@ header.active .ri-moon-line{
 .contenedor_inicio{
     min-height: 80vh;
     position: relative;
-    background: url(../img/banner.jpeg);
+    background: url(../img/banner.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -374,6 +374,7 @@ img{
 }
 .content_starts{
     margin-bottom: 5px;
+    padding: 0 5px;
 }
 .content_img_like_name p{
     margin-bottom: 10px;
@@ -612,7 +613,7 @@ img{
     color: var(--color-white);
 }
 .content_img_like_name P{ 
-    color: var(--primer-color);
+    color: var(--segundo-color);
     font-size: 1.4rem;
     font-weight: lighter;
 }
@@ -1662,7 +1663,7 @@ a{
         font-size: 1rem;
     }
     .titulo_inicio.uno{
-       font-size: 2.5rem;
+       font-size: 1.2rem;
     }
     .titulo_inicio.sub{
         font-size: 1.5rem;
@@ -1679,9 +1680,6 @@ a{
     .content p{
         font-size: 1rem;
     }
-    .name_plato{
-        font-size: 1rem;
-    }
     .contenedor_titulo{
         font-size: 1.5rem;
     }
@@ -1690,6 +1688,23 @@ a{
     }
     .data_description_restaurant{
         width: 100%;
+    }
+    .container{
+        height: 700px;
+    }
+    .description_restaurante{
+        font-size: 1rem;
+    }
+    .name_plato{
+        font-size: 0.9rem;
+        text-align: left;
+        line-height: 20px;
+    }
+    .div_name_plato{
+        align-items: flex-end;
+    }
+    .price_plato{
+        margin-bottom: 3px;
     }
 }
 
@@ -1701,5 +1716,19 @@ a{
     .content_btns_precio{
         flex-direction: column;
     }
-
+    .div_name_plato{
+     align-items: flex-end;
+    }
+    .price_plato{
+        margin-bottom: 3px;
+    }
+    .name_plato {
+        line-height: 18px;
+        font-size: 0.9rem;
+        text-align: left;
+    }
+    .content_starts{
+        word-wrap: break-word;
+    }
+    
 }
